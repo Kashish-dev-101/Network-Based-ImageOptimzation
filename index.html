@@ -7,30 +7,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Network Based Image Optimization</h1>
+    <div class="container">
+      <h1>Network Based Image Optimization</h1>
 
-    <section class="description">
-      <p>
-        This demo adapts image quality based on your network connection. Using
-        the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API" target="_blank">Network Information API</a>
-        and ImageKit's <code>q</code> (quality) transformation parameter, images
-        are served at different quality levels depending on your connection
-        speed.
-      </p>
-      <p>
-        <strong>How it works:</strong> On fast connections (4G/WiFi), you get
-        high-quality images. On slower connections (3G/2G), quality is reduced
-        to ensure faster load times and save bandwidth.
-      </p>
-    </section>
+      <section class="description">
+        <p>
+          This demo adapts image quality based on your network connection. Using
+          the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API" target="_blank">Network Information API</a>
+          and ImageKit's <code>q</code> (quality) transformation parameter, images
+          are served at different quality levels depending on your connection
+          speed.
+        </p>
+        <p>
+          <strong>How it works:</strong> On fast connections (4G/WiFi), you get
+          high-quality images. On slower connections (3G/2G), quality is reduced
+          to ensure faster load times and save bandwidth.
+        </p>
+      </section>
 
-    <p id="info">Detecting network…</p>
+      <p id="info">Detecting network…</p>
 
-    <img id="image" />
+      <div class="demo-image">
+        <img id="image" />
+      </div>
 
-    <div class="info-box">
-      <p class="label">Image URL</p>
-      <a id="imageUrl" class="url" href="#" target="_blank" rel="noopener">Loading…</a>
+      <div class="info-box">
+        <p class="label">Image URL</p>
+        <a id="imageUrl" class="url" href="#" target="_blank" rel="noopener">Loading…</a>
+      </div>
     </div>
 
     <script src="app.js"></script>
