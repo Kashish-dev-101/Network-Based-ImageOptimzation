@@ -3,27 +3,28 @@ const BASE_IMAGE =
 
 const infoEl = document.getElementById("info");
 const imgEl = document.getElementById("image");
+const imageUrlEl = document.getElementById("imageUrl");
 
 function getQualityFromNetwork() {
   const connection = navigator.connection; // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
-  console.log(connection);
+  // console.log(connection);
 
   if (!connection) {
-    return { q: 60, label: "Network API not supported → default quality" };
+    return { q: 60, label: "<strong>Network API not supported</strong> → quality: <strong>60</strong>" };
   }
 
   const type = connection.effectiveType;
-  console.log(type);
+  // console.log(type);
 
   if (type === "slow-2g" || type === "2g") {
-    return { q: 40, label: "Slow network → q=40" };
+    return { q: 40, label: "<strong>Slow network (2G)</strong> → quality: <strong>40</strong>" };
   }
 
   if (type === "3g") {
-    return { q: 55, label: "Medium network → q=55" };
+    return { q: 55, label: "<strong>Medium network (3G)</strong> → quality: <strong>55</strong>" };
   }
 
-  return { q: 75, label: "Fast network → q=75" };
+  return { q: 75, label: "<strong>Fast network (4G/WiFi)</strong> → quality: <strong>75</strong>" };
 }
 
 function renderImage() {
@@ -31,8 +32,10 @@ function renderImage() {
 
   const optimizedUrl = `${BASE_IMAGE}?tr=q-${q},w-800`;
 
-  infoEl.textContent = label;
+  infoEl.innerHTML = label;
   imgEl.src = optimizedUrl;
+  imageUrlEl.textContent = optimizedUrl;
+  imageUrlEl.href = optimizedUrl;
 }
 
 renderImage();
