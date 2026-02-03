@@ -12,6 +12,35 @@ h1 {
 p {
   color: #aab4d4;
   margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.description {
+  background: #161a24;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  background: #252b3b;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  color: #7dd3fc;
+}
+
+a {
+  color: #60a5fa;
+}
+
+a:hover {
+  color: #93c5fd;
 }
 
 img {
@@ -19,4 +48,32 @@ img {
   max-width: 600px;
   border-radius: 12px;
   display: block;
+}
+
+.info-box {
+  margin-top: 16px;
+  max-width: 600px;
+}
+
+.info-box .label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.url {
+  display: block;
+  background: #161a24;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  word-break: break-all;
+  line-height: 1.5;
+  color: #60a5fa;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.url:hover {
+  color: #93c5fd;
 }
